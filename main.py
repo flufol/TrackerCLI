@@ -3,14 +3,16 @@ import os
 import sys
 import argparse
 import pyfiglet
+from pathlib import Path
 from datetime import date
 from rich.console import Console
 from rich.table import Table
 from rich.text import Text
 
 
+DIR = Path(__file__).resolve().parent
+SAVE = DIR / 'save.json'
 
-SAVE = "/Users/BenStoner/Projects/Tracker/save.json"
 
 
 def get_save():
