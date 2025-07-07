@@ -136,6 +136,7 @@ def display_week(week: int):
     for i in days:
         table.add_column(justify="center")
 
+    console.print('')
     table.add_row(*status_list)
     table.add_row(*[f"[dim]{day}[/]" for day in days])
     console.print(f"[underline]Week {week}[/], streak of [{get_streak_color(get_streak())}]{get_streak()}[/]")
@@ -155,14 +156,14 @@ if __name__ == "__main__":
     parser_mark_today.add_argument('--day', help='choose a specific day to set the status off', type=int, default=get_current_day(), choices=[1, 2, 3, 4, 5, 6, 7])
     parser_mark_today.add_argument('status', help='the status the day will be set to', type=str, choices=['complete', 'fail', 'empty'], nargs='?', default="empty")
 
-    parser_display = subparsers.add_parser('display-week', help="Displays the current week status")
-    parser_display.add_argument('week', help='the specific week to display', type=int, nargs='?', default=get_current_week())
+    parser_display = subparsers.add_parser('display', help="Displays the current week status")
+    parser_display.add_argument('--week', help='the specific week to display', type=int, nargs='?', default=get_current_week())
 
     parser_streak = subparsers.add_parser('streak', help='Shows the current streak of fully completed weeks')
 
     args = parser.parse_args()
 
-    if args.command == 'display-week':
+    if args.command == 'display':
         display_week(args.week)
     elif args.command == 'mark-day':
         mark_day(get_current_week(), args.day, args.status)

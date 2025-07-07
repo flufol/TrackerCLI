@@ -8,6 +8,8 @@ venv/
 .env/
 .venv/
 
+save.json
+
 # VS Code settings (if using VS Code)
 .vscode/
 

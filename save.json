@@ -30,19 +30,19 @@
       "completed": true
     },
     "3": {
-      "completed": null
+      "completed": true
     },
     "4": {
-      "completed": null
+      "completed": true
     },
     "5": {
-      "completed": null
+      "completed": false
     },
     "6": {
-      "completed": null
+      "completed": false
     },
     "7": {
-      "completed": null
+      "completed": true
     }
   }
 }
